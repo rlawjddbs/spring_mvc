@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+#joinTitle{ font-weight:bold; font-size:20px }
+
+body, div, ul, ol, li, code, form, fieldset, legend, textarea, p,
+	blockquote, th, td, input, select, button {
+	/* margin: 0;
+	padding: 0; */
+}
+
+fieldset, img {
+	border: 0 none;
+}
+
+ul, ol, li {
+	/* list-style: none; */
+}
+
+body, th, td, input, select, textarea, button {
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: AppleSDGothicNeo-Regular, 'Malgun Gothic', '맑은 고딕', dotum,
+		'돋움', sans-serif;
+	color: #222;
+	letter-spacing: -1px
+}
+
+.os_mac body, .os_mac th, .os_mac td, .os_mac input, .os_mac select,
+	.os_mac textarea, .os_mac button {
+	letter-spacing: 0
+}
+
+a {
+	color: #3f3f3f;
+	text-decoration: none
+}
+
+a:hover {
+	color: #128EFD;
+	text-decoration: underline
+}
+
+.inputBox {
+	border: 1px solid #EDEDED;
+	background-color: #FFF
+}
+
+.btn {
+	border: 1px solid #1c1c1c;
+	background-color: #FFF;
+	color: #1c1c1c;
+	padding:5px 10px;
+	line-height:1.5;
+	cursor:pointer;
+	transition-duration:0.3s;
+	border-radius:5px;
+}
+
+.btn:hover{
+	background-color:#000;
+	color:#fff;
+}

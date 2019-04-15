@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <!-- Query문을 정의 
+  		namespace: XML내에서 중복된 id를 사용할 수 있도록 구분하는 것.
+  		패키지와 비슷한 용도, 주고 싶은 이름값 주기
+  -->
+<mapper namespace="kr.co.sist.notice">
+
+	<resultMap type="kr.co.sist.domain.Notice" id="noticeResult">
+		<result column="num" property="num" />
+		<result column="subject" property="subject" />
+	</resultMap>
+
+	<select id="noticeList" resultMap="noticeResult">
+		select num, subject from
+		(select num, subject, row_number() over(order by w_date desc) r_num
+		from diary)
+		where r_num between 1 and 5
+	</select>
+</mapper>
