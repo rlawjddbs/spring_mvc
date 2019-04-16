@@ -92,7 +92,7 @@
 				<li><a href="#void">3일차</a>
 					<ul>
 						<li><a href="session/use_session.do">HttpSession 사용</a></li>
-						<li><a href="use_session_att.do">@SessionAttributes(Annotation) 사용</a></li>
+						<li><a href="session/an_use_session.do">@SessionAttributes(Annotation) 사용</a></li>
 					</ul>
 				</li>
 			</ul>

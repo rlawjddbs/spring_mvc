@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+		info="세션 값을 사용하는 페이지"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -35,16 +36,11 @@
 		</div>
 		<div id="container">
 			<div>
-				<form action="session_param.do" method="post">
-					<label>이름</label>
-					<input type="text" name="name" class="inputBox" value="${ ses_name }"/><br />
-					<label>주소</label>
-					<input type="text" name="addr" class="inputBox" value="${ ses_addr }"/><br />
-					<input type="submit" name="전송" class="btn" /><br />
-					<a href="remove_session.do">세션 삭제</a>
-				</form>
-			</div>
-			
+				<strong>세션 사용</strong><br />
+				<strong>${ sessionScope.flag }</strong><br />
+				<strong>이름 : ${ sessionScope.ses_name }</strong>
+				<strong>주소 : ${ sessionScope.ses_addr }</strong>
+			</div>			
 						
 		</div>
 		<div id="footer">

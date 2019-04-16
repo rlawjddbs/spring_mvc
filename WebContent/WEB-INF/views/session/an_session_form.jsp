@@ -35,13 +35,13 @@
 		</div>
 		<div id="container">
 			<div>
-				<form action="session_param.do" method="post">
+				<form action="an_session_param.do" method="post">
 					<label>이름</label>
-					<input type="text" name="name" class="inputBox" value="${ ses_name }"/><br />
+					<input type="text" name="name" class="inputBox" value="${ an_name }"/><br />
 					<label>주소</label>
-					<input type="text" name="addr" class="inputBox" value="${ ses_addr }"/><br />
+					<input type="text" name="addr" class="inputBox" value="${ an_addr }"/><br />
 					<input type="submit" name="전송" class="btn" /><br />
-					<a href="remove_session.do">세션 삭제</a>
+					<a href="an_remove_session.do">세션 삭제</a>
 				</form>
 			</div>
 			
