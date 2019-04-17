@@ -95,9 +95,16 @@
 						<li><a href="session/an_use_session.do">@SessionAttributes(Annotation) 사용</a></li>
 					</ul>
 				</li>
+				<li><a href="#void">4일차</a>
+					<ul>
+						<li><a href="cookie/read_cookie.do">Cookie클래스를 사용한 값 얻기</a></li>
+						<li><a href="cookie/an_read_cookie.do">@CookiValue(Annotation)를 사용한 쿠키값 얻기</a></li>
+						<li><a href="include/include.do">JSP include 하기</a></li>
+					</ul>
+				</li>
 			</ul>
 		</li>
-		<li><a href="main.jsp?page=day0410/car">동기방식 차량조회</a></li>
+		<li><a href="#">동기방식 차량조회</a></li>
 	</ul>
 </nav>
 <!-- SmartMenu 끝 -->
