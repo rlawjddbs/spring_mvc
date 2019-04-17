@@ -25,7 +25,6 @@ public class AjaxController {
 		AjaxService as = new AjaxService();
 		
 		json = as.createJson();
-		
 		return json.toJSONString();
 	} // getJsonObject
 	

@@ -30,7 +30,12 @@
 					alert("문제발생"+xhr.status); // xhr.status : 404, 400 등
 				}, 
 				success:function( json_obj ){
-					alert( json_obj )
+					var output='<img src="http://localhost:8080/spring_mvc/common/images/img1_1.png" /><br />'
+					+decodeURI(json_obj.name)
+					+"/"+json_obj.age
+					+"세 ( "+decodeURI(json_obj.type)+" )";
+					
+					$("#view").html(output);
 				} 
 			});
 		}); // click
