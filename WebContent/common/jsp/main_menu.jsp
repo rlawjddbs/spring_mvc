@@ -100,6 +100,7 @@
 						<li><a href="cookie/read_cookie.do">Cookie클래스를 사용한 값 얻기</a></li>
 						<li><a href="cookie/an_read_cookie.do">@CookiValue(Annotation)를 사용한 쿠키값 얻기</a></li>
 						<li><a href="include/include.do">JSP include 하기</a></li>
+						<li><a href="ajax/ajax.do">Spring AJAX</a></li>
 					</ul>
 				</li>
 			</ul>
