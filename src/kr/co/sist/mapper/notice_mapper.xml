@@ -21,4 +21,45 @@
 		from diary)
 		where r_num between 1 and 5
 	</select>
+	
+	<select id="diaryTotalCnt" resultType="int">
+		select count(*) cnt from diary
+	</select>
+	
+	<resultMap type="kr.co.sist.domain.Diary" id="DiaryResult">
+		<result column="num" property="num" />
+		<result column="subject" property="subject" />
+		<result column="writer" property="writer" />
+		<result column="e_year" property="e_year" />
+		<result column="e_month" property="e_month" />
+		<result column="e_day" property="e_day" />
+		<result column="w_date" property="w_date" />
+	</resultMap>
+	<select id="diaryList" resultMap="DiaryResult" parameterType="kr.co.sist.vo.DiaryVO">
+		SELECT NUM, SUBJECT, WRITER, E_YEAR, E_MONTH, E_DAY, TO_CHAR(W_DATE, 'YYYY-MM-DD HH24:MI') W_DATE
+			FROM ( select num, subject, writer, e_year, e_month, e_day,w_date, ROW_NUMBER() OVER(ORDER BY w_date DESC) R_NUM
+			FROM DIARY)
+		where r_num between #{ startNum } and #{ endNum }
+	</select>
+	
+	<select id="diaryDetail" parameterType="int" resultType="kr.co.sist.domain.DiaryDetail">
+		SELECT WRITER, SUBJECT, CONTENTS, TO_CHAR(W_DATE, 'YYYY-MM-DD DY HH24:MI') W_DATE, IP
+		FROM DIARY
+		WHERE NUM=#{ num }
+	</select>
+	
+	<select id="diaryReply" resultType="kr.co.sist.domain.DiaryReply" parameterType="int">
+		select num, writer, content, to_char(input_date,'yyyy-mm-dd hh24:mi') input_date
+		from diary_reply
+		where num_ref = #{ num_ref }
+		order by num desc
+	</select>
+	
+	<insert id="insertReply" parameterType="kr.co.sist.vo.ReplyVO">
+		insert into diary_reply(num, num_ref, writer, content, input_date) 
+		values(seq_reply.nextval, #{ num_ref }, #{ writer }, #{ content }, sysdate)
+	</insert>
+	
+	
+	
 </mapper>
