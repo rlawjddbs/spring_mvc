@@ -50,6 +50,7 @@ public class BbsController {
 		model.addAttribute("pageScale", pageScale);
 		model.addAttribute("currengPage", dv.getCurrentPage());
 		model.addAttribute("totalCount", totalCount);
+		model.addAttribute("currentPage", dv.getCurrentPage()); // param.currentPage 해도 되지만 해당 parameter가 없을 수도 있으므로
 		
 		return "diary/list";
 	} // diaryList
