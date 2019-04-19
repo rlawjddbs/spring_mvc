@@ -21,7 +21,6 @@ import kr.co.sist.vo.ReplyVO;
  */
 public class DiaryService {
 	
-	private static DiaryService ds;
 	private MyBatisDAO mb_dao;
 	
 	public DiaryService() {

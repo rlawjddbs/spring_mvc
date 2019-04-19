@@ -20,7 +20,7 @@
 	<!-- 쿼리문을 가진 XML을 연결 -->
 	<mappers>
 		<!-- <mapper resource="day0403/mapper/dept_mapper.xml" /> -->
-		<mapper resource="kr/co/sist/mapper/notice_mapper.xml"></mapper>
+		<mapper resource="kr/co/sist/mapper/inquiry_mapper.xml"></mapper>
 	</mappers>
 	
 </configuration>
