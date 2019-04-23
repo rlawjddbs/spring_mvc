@@ -21,8 +21,16 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	
+	<context:annotation-config><!-- @Component, @Autowired, @Controller를 Spring
+	Framework가 찾을 수 있도록 설정 --></context:annotation-config>
+	<!-- context:component-scan 을 @Controller, @Autowired, @Component등이 
+	작성된 클래스가 위치한 패키지로 설정해줘야 	Spring Framework이 
+	@Controller를 찾을 수 있다. 제대로된 경로 설정이 안 되어있을 경우 에러 발생 -->
 	<context:component-scan base-package="kr.co.sist" />
-	
-	
+	<context:component-scan base-package="kr.co.sist.dao.*" /> <!-- dao 패키지 하위의 세부내용들을 찾겠다.. 라는 뜻 -->
+	<context:component-scan base-package="kr.co.sist.dao" /> <!-- dao 패키지에서 찾겠다.. 라는 뜻 -->
+	<context:component-scan base-package="kr.co.sist.service.*" />
+	<context:component-scan base-package="kr.co.sist.service" />
 	
 </beans:beans>

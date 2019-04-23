@@ -1,16 +1,27 @@
 package kr.co.sist.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.co.sist.service.MainService;
+
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Controller
 public class MainController {
+	
+	@Autowired(required=false)
+	private MainService ms;
+	
 	@RequestMapping(value="/index.do",method=GET)
-	public String indexPage() {
+	public String indexPage(Model model) {
+		// 원래는 Model을 통해 DB조회가 이루어 지는 곳임
 		
-		// Model을 통해 DB조회가 이루어 지는 곳
+		model.addAttribute("notice", ms.noticeList());
 		
 		return "index";
 	} // indexPage

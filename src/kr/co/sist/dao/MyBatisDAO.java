@@ -8,6 +8,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.stereotype.Component;
 
 import kr.co.sist.domain.Diary;
 import kr.co.sist.domain.DiaryDetail;
@@ -16,6 +17,7 @@ import kr.co.sist.domain.Notice;
 import kr.co.sist.vo.DiaryVO;
 import kr.co.sist.vo.ReplyVO;
 
+@Component
 public class MyBatisDAO {
 
 	private static MyBatisDAO mb_dao;
